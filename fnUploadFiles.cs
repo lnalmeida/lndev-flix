@@ -64,8 +64,6 @@ namespace fnUploadfile
                     await blob.UploadAsync(fileStream, true);
                 }
 
-                blobClient.Upload(file.OpenReadStream(), true);
-
                 logger.LogInformation($"File uploaded to Azure Storage Account: {fileName}");
 
                 return new OkObjectResult(new
