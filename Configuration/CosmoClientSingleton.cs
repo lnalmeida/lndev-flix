@@ -5,7 +5,7 @@ namespace CosmosClientSingletonconfiguration
 {
     public static class CosmosClientSingleton
     {
-        private static CosmosClient? _cosmosClient;
+        private static CosmosClient _cosmosClient;
 
         public static CosmosClient GetCosmosClient()
         {

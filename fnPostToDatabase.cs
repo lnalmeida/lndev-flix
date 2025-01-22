@@ -24,9 +24,9 @@ public static class PostToDatabase
         HttpRequest req,
         ILogger logger)
     {
-        string databaseName = Environment.GetEnvironmentVariable("DatabaseName");
-        string containerName = Environment.GetEnvironmentVariable("ContainerName");
-        string partitionKey = "/id";
+        string? databaseName = Environment.GetEnvironmentVariable("DatabaseName");
+        string? containerName = Environment.GetEnvironmentVariable("ContainerName");
+        string? partitionKey = "/id";
         logger.LogInformation("Processing request to send data to Cosmos DB.");
 
         try
