@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Azure.Cosmos;
 
-namespace PostToDatabase
+namespace CosmosClientSingletonconfiguration
 {
     public static class CosmosClientSingleton
     {

@@ -10,6 +10,7 @@ using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using lndev_flix.Models;
+using CosmosClientSingletonconfiguration;
 
 namespace PostToDatabase;
 
@@ -25,7 +26,7 @@ public static class PostToDatabase
     {
         string databaseName = Environment.GetEnvironmentVariable("DatabaseName");
         string containerName = Environment.GetEnvironmentVariable("ContainerName");
-        string PartitionKey = "/id";
+        string partitionKey = "/id";
         logger.LogInformation("Processing request to send data to Cosmos DB.");
 
         try
@@ -35,7 +36,7 @@ public static class PostToDatabase
             logger.LogInformation("Cosmos DB database obtained.");
             Container container = await database.Database.CreateContainerIfNotExistsAsync(
                 id: containerName,
-                partitionKeyPath: PartitionKey
+                partitionKeyPath: partitionKey
             );
             logger.LogInformation("Cosmos DB container obtained.");
 
